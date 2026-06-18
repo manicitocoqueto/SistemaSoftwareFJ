@@ -1,4 +1,5 @@
 from modelos.servicio import Servicio
+from excepciones.excepciones import ServicioError
 
 
 class ReservaSala(Servicio):
@@ -20,6 +21,12 @@ class ReservaSala(Servicio):
             costo_base
         )
 
+        if capacidad <= 0:
+
+            raise ServicioError(
+                "La capacidad debe ser mayor que cero."
+            )
+
         self.capacidad = capacidad
 
     def calcular_costo(
@@ -28,6 +35,24 @@ class ReservaSala(Servicio):
         descuento=0,
         impuesto=0
     ):
+
+        if horas <= 0:
+
+            raise ServicioError(
+                "Las horas deben ser mayores que cero."
+            )
+
+        if descuento < 0:
+
+            raise ServicioError(
+                "El descuento no puede ser negativo."
+            )
+
+        if impuesto < 0:
+
+            raise ServicioError(
+                "El impuesto no puede ser negativo."
+            )
 
         subtotal = self.costo_base * horas
 
