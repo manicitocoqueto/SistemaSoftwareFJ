@@ -127,7 +127,7 @@ class VentanaPrincipal:
         parametros = list(sig.parameters.keys())[1:] # Omitimos 'self'
         num_esperados = len(parametros)
 
-        # Mapeo inteligente según el nombre que tenga el argumento en tu modelo original
+        # Mapeo inteligente según el nombre que tenga el argumento en el modelo original
         valores_disponibles = {
             'id': id_reserva, 'id_reserva': id_reserva,
             'cliente': cliente,
