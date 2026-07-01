@@ -3,22 +3,22 @@ Proyecto: Sistema Integral de Gestión
 Software FJ
 
 Integrante:
-Veronica Valencia Cortez
+Verónica Valencia Cortez
 
 Archivo principal del sistema.
 Se encarga de iniciar la interfaz gráfica.
 """
 
-from interfaz.ventana_principal import VentanaPrincipal
+import interfaz.ventana_principal
 
 
 def main():
-    """
+    """{}
     Función principal que inicia
     la ventana principal del sistema.
     """
 
-    app = VentanaPrincipal()
+    app = interfaz.ventana_principal.VentanaPrincipal()
     app.ejecutar()
 
 
